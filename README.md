@@ -1,3 +1,7 @@
+☝️ Note that this is a fork of the [Vercel OG-Images](https://github.com/vercel/og-image) repo for custom [Automad](https://automad.org) and [Revitron](https://revitron.readthedocs.io) open graph images.
+
+---
+
 <a href="https://vercel.com/new/project?template=vercel/og-image"><img width="128" src="https://vercel.com/button" align="right"></a>
 
 # [Open Graph Image as a Service](https://og-image.vercel.app)
