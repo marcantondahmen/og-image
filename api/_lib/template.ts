@@ -33,7 +33,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	html {
-		font-size: 92px;
+		font-size: 85px;
 		margin: 0;
 		padding: 0;
 	}
@@ -44,7 +44,7 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.25rem;
+		padding: 1.2rem;
 		font-family: Inter;
 		font-weight: 450;
 		color: ${foreground};
@@ -68,7 +68,7 @@ function getCss(foreground: string, background: string) {
 		justify-content: space-between;
 		flex-grow: 1;
 		width: 100%;
-		height: 63.5%;
+		height: 58%;
 	}
 
 	.header .content {
