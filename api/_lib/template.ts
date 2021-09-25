@@ -1,146 +1,151 @@
-
 import { readFileSync } from 'fs';
-import marked from 'marked';
 import { sanitizeHtml } from './sanitizer';
-import { ParsedRequest } from './types';
+import { MetaData } from './types';
+
 const twemoji = require('twemoji');
 const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
-const rglr = readFileSync(`${__dirname}/../_fonts/Inter-Regular.woff2`).toString('base64');
-const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('base64');
-const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
+const inter = readFileSync(
+	`${__dirname}/../_fonts/Inter-roman.var.woff2`
+).toString('base64');
 
-function getCss(theme: string, fontSize: string) {
-    let background = 'white';
-    let foreground = 'black';
-    let radial = 'lightgray';
+const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
+	'base64'
+);
 
-    if (theme === 'dark') {
-        background = 'black';
-        foreground = 'white';
-        radial = 'dimgray';
-    }
-    return `
-    @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
-    }
+function getCss() {
+	let background = 'white';
+	let foreground = '#181818';
 
-    @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: bold;
-        src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
-    }
+	return `
+	@font-face {
+		font-family: 'Vera';
+		font-style: normal;
+		font-weight: normal;
+		src: url(data:font/woff2;charset=utf-8;base64,${mono})  format("woff2");
+	}
 
-    @font-face {
-        font-family: 'Vera';
-        font-style: normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${mono})  format("woff2");
-      }
+	@font-face {
+		font-family: 'Inter';
+		font-weight: 100 900;
+		font-display: swap;
+		font-style: normal;
+		font-named-instance: 'Regular';
+		src: url(data:font/woff2;charset=utf-8;base64,${inter}) format('woff2');
+	}
 
-    body {
-        background: ${background};
-        background-image: radial-gradient(circle at 25px 25px, ${radial} 2%, transparent 0%), radial-gradient(circle at 75px 75px, ${radial} 2%, transparent 0%);
-        background-size: 100px 100px;
-        height: 100vh;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
+	html {
+		font-size: 82px;
+		margin: 0;
+		padding: 0;
+	}
 
-    code {
-        color: #D400FF;
-        font-family: 'Vera';
-        white-space: pre-wrap;
-        letter-spacing: -5px;
-    }
+	body {
+		display: flex;
+		box-sizing: border-box;
+		flex-direction: column;
+		height: 100vh;
+		margin: 0;
+		padding: 1.2rem;
+		font-family: Inter;
+		font-weight: 430;
+		color: ${foreground};
+		background: ${background};
+		border-bottom: 0.5rem solid;
+	}
 
-    code:before, code:after {
-        content: '\`';
-    }
+	code {
+		color: #D400FF;
+		font-family: 'Vera';
+		white-space: pre-wrap;
+		letter-spacing: -5px;
+	}
 
-    .logo-wrapper {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        justify-items: center;
-    }
+	code:before, code:after {
+		content: '\`';
+	}
 
-    .logo {
-        margin: 0 75px;
-    }
+	.header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 63.5%;
+	}
 
-    .plus {
-        color: #BBB;
-        font-family: Times New Roman, Verdana;
-        font-size: 100px;
-    }
+	.header .content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 75%;
+		padding-right: 1.25rem;
+	}
 
-    .spacer {
-        margin: 150px;
-    }
+	.header .logo {
+		width: 25%;
+		text-align: right;
+	}
 
-    .emoji {
-        height: 1em;
-        width: 1em;
-        margin: 0 .05em 0 .1em;
-        vertical-align: -0.1em;
-    }
-    
-    .heading {
-        font-family: 'Inter', sans-serif;
-        font-size: ${sanitizeHtml(fontSize)};
-        font-style: normal;
-        color: ${foreground};
-        line-height: 1.8;
-    }`;
+	.project {
+		font-size: 0.85rem;
+		font-weight: 480;
+	}
+	
+	.title {
+		font-size: 1.25rem;
+		font-weight: 720;
+		line-height: 1.45rem;
+	}
+
+	.description {
+		padding: 0.75rem 0 0 0;
+		box-sizing: border-box;
+		font-size: 0.85rem;
+		font-weight: 480;
+		line-height: 1.05rem;
+	}
+
+	.plus {
+		color: #BBB;
+		font-family: Times New Roman, Verdana;
+		font-size: 100px;
+	}
+
+	.emoji {
+		height: 1em;
+		width: 1em;
+		margin: 0 .05em 0 .1em;
+		vertical-align: -0.1em;
+	}`;
 }
 
-export function getHtml(parsedReq: ParsedRequest) {
-    const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
-    return `<!DOCTYPE html>
+export function getHtml(meta: MetaData) {
+	const { name, logo, title, description } = meta;
+	return `<!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
-    <title>Generated Image</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        ${getCss(theme, fontSize)}
-    </style>
-    <body>
-        <div>
-            <div class="spacer">
-            <div class="logo-wrapper">
-                ${images.map((img, i) =>
-                    getPlusSign(i) + getImage(img, widths[i], heights[i])
-                ).join('')}
-            </div>
-            <div class="spacer">
-            <div class="heading">${emojify(
-                md ? marked(text) : sanitizeHtml(text)
-            )}
-            </div>
-        </div>
-    </body>
+	<meta charset="utf-8">
+	<title>Generated Image</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		${getCss()}
+	</style>
+	<body>
+		<div class="header">
+			<div class="content">
+				<div class="project">
+					${sanitizeHtml(name)}
+				</div>
+				<div class="title">
+					${sanitizeHtml(title)}
+				</div>
+			</div>
+			<div class="logo">
+				${logo}
+			</div>
+		</div>
+		<div class="description">
+			${emojify(sanitizeHtml(description))}
+		</div>
+	</body>
 </html>`;
-}
-
-function getImage(src: string, width ='auto', height = '225') {
-    return `<img
-        class="logo"
-        alt="Generated Image"
-        src="${sanitizeHtml(src)}"
-        width="${sanitizeHtml(width)}"
-        height="${sanitizeHtml(height)}"
-    />`
-}
-
-function getPlusSign(i: number) {
-    return i === 0 ? '' : '<div class="plus">+</div>';
 }
