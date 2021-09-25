@@ -44,7 +44,7 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.5rem;
+		padding: 1.7rem;
 		font-family: Inter;
 		font-weight: 450;
 		color: ${foreground};
@@ -86,9 +86,9 @@ function getCss(foreground: string, background: string) {
 
 	.header svg {
 		width: auto;
-		height: 80%;
+		height: 75%;
 		max-width: 100%;
-		max-height: 80%;
+		max-height: 75%;
 		fill: currentColor;
 	}
 
