@@ -33,7 +33,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	html {
-		font-size: 82px;
+		font-size: 92px;
 		margin: 0;
 		padding: 0;
 	}
@@ -44,9 +44,9 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.2rem;
+		padding: 1.25rem;
 		font-family: Inter;
-		font-weight: 430;
+		font-weight: 450;
 		color: ${foreground};
 		background: ${background};
 		border-bottom: 0.5rem solid;
@@ -66,6 +66,7 @@ function getCss(foreground: string, background: string) {
 	.header {
 		display: flex;
 		justify-content: space-between;
+		flex-grow: 1;
 		width: 100%;
 		height: 63.5%;
 	}
@@ -74,16 +75,24 @@ function getCss(foreground: string, background: string) {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 75%;
+		width: 64%;
 		padding-right: 1.25rem;
 	}
 
 	.header .logo {
-		width: 25%;
+		width: 36%;
 		text-align: right;
 	}
 
-	.project {
+	.header svg {
+		width: auto;
+		height: 65%;
+		max-width: 100%;
+		max-height: 65%;
+		fill: currentColor;
+	}
+
+	.name {
 		font-size: 0.85rem;
 		font-weight: 480;
 	}
@@ -92,6 +101,10 @@ function getCss(foreground: string, background: string) {
 		font-size: 1.25rem;
 		font-weight: 720;
 		line-height: 1.45rem;
+	}
+
+	.title .vendor {
+		font-weight: 450;
 	}
 
 	.description {
@@ -129,11 +142,11 @@ export function getHtml(meta: MetaData) {
 	<body>
 		<div class="header">
 			<div class="content">
-				<div class="project">
+				<div class="name">
 					${sanitizeHtml(name)}
 				</div>
 				<div class="title">
-					${sanitizeHtml(title)}
+					${packageTitle(sanitizeHtml(title))}
 				</div>
 			</div>
 			<div class="logo">
@@ -145,4 +158,11 @@ export function getHtml(meta: MetaData) {
 		</div>
 	</body>
 </html>`;
+}
+
+function packageTitle(title: string) {
+	return title.replace(
+		/(.+?)&#x2F;(.+)/g,
+		'<span class="vendor">$1 ⁄</span><br> $2'
+	);
 }

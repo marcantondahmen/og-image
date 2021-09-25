@@ -41,7 +41,7 @@ export async function getMetaData(project: string, page: string) {
 		title = title.replace(item, '');
 	});
 
-	let descriptionShort = description.replace(/^(.{140}[^\s]*).*/, '$1');
+	let descriptionShort = description.replace(/^(.{110}[^\s]*).*/, '$1');
 
 	if (descriptionShort !== description) {
 		descriptionShort = `${descriptionShort} ...`;
