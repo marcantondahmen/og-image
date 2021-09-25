@@ -30,7 +30,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://automad.org',
-		foreground: '#181818',
+		foreground: '#1070ff',
 		background: '#ffffff',
 	},
 	automadPackages: <ProjectSettings>{
@@ -62,7 +62,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://packages.automad.org',
-		foreground: '#181818',
+		foreground: '#1070ff',
 		background: '#ffffff',
 	},
 	revitron: <ProjectSettings>{
@@ -123,7 +123,7 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#ffffff',
 	},
 	airmad: <ProjectSettings>{
-		name: 'Airmad',
+		name: 'Automad — Airmad',
 		logo: `
 			<svg 
 			xmlns="http://www.w3.org/2000/svg" 

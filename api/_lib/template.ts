@@ -33,7 +33,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	html {
-		font-size: 85px;
+		font-size: 76px;
 		margin: 0;
 		padding: 0;
 	}
@@ -44,12 +44,12 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.2rem;
+		padding: 1.5rem;
 		font-family: Inter;
 		font-weight: 450;
 		color: ${foreground};
 		background: ${background};
-		border-bottom: 0.5rem solid;
+		border-bottom: 0.85rem solid;
 	}
 
 	code {
@@ -68,7 +68,7 @@ function getCss(foreground: string, background: string) {
 		justify-content: space-between;
 		flex-grow: 1;
 		width: 100%;
-		height: 58%;
+		height: 56%;
 	}
 
 	.header .content {
@@ -86,9 +86,9 @@ function getCss(foreground: string, background: string) {
 
 	.header svg {
 		width: auto;
-		height: 65%;
+		height: 80%;
 		max-width: 100%;
-		max-height: 65%;
+		max-height: 80%;
 		fill: currentColor;
 	}
 
@@ -108,7 +108,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	.description {
-		padding: 0.7rem 0 0 0;
+		padding: 0.7rem 1.25rem 0 0;
 		box-sizing: border-box;
 		font-size: 0.85rem;
 		font-weight: 480;
