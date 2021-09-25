@@ -11,4 +11,6 @@ export interface MetaData {
 	logo: string;
 	title: string;
 	description: string;
+	foreground: string;
+	background: string;
 }

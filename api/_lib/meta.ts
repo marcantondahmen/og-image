@@ -12,6 +12,8 @@ export async function getMetaData(project: string, page: string) {
 			logo: '',
 			title: '',
 			description: '',
+			foreground: '',
+			background: '',
 		};
 
 		return meta;
@@ -50,6 +52,8 @@ export async function getMetaData(project: string, page: string) {
 		logo: data.logo,
 		title: title,
 		description: descriptionShort,
+		foreground: data.foreground,
+		background: data.background,
 	};
 
 	return meta;

@@ -14,10 +14,7 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
 	'base64'
 );
 
-function getCss() {
-	let background = 'white';
-	let foreground = '#181818';
-
+function getCss(foreground: string, background: string) {
 	return `
 	@font-face {
 		font-family: 'Vera';
@@ -120,14 +117,14 @@ function getCss() {
 }
 
 export function getHtml(meta: MetaData) {
-	const { name, logo, title, description } = meta;
+	const { name, logo, title, description, foreground, background } = meta;
 	return `<!DOCTYPE html>
 <html>
 	<meta charset="utf-8">
 	<title>Generated Image</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		${getCss()}
+		${getCss(foreground, background)}
 	</style>
 	<body>
 		<div class="header">
