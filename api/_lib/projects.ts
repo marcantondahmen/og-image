@@ -30,8 +30,8 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://automad.org',
-		foreground: '#1070ff',
-		background: '#ffffff',
+		foreground: '#ffffff',
+		background: '#1f2022',
 	},
 	automadPackages: <ProjectSettings>{
 		name: 'Automad Packages',
@@ -62,7 +62,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://packages.automad.org',
-		foreground: '#1070ff',
+		foreground: '#181818',
 		background: '#ffffff',
 	},
 	revitron: <ProjectSettings>{

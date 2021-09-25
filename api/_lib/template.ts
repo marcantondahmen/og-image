@@ -44,12 +44,11 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.7rem;
+		padding: 1.75rem;
 		font-family: Inter;
 		font-weight: 450;
 		color: ${foreground};
 		background: ${background};
-		border-bottom: 0.85rem solid;
 	}
 
 	code {
@@ -86,9 +85,9 @@ function getCss(foreground: string, background: string) {
 
 	.header svg {
 		width: auto;
-		height: 75%;
+		height: 70%;
 		max-width: 100%;
-		max-height: 75%;
+		max-height: 70%;
 		fill: currentColor;
 	}
 
@@ -108,7 +107,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	.description {
-		padding: 0.7rem 1.25rem 0 0;
+		padding: 0.7rem 0 0 0;
 		box-sizing: border-box;
 		font-size: 0.85rem;
 		font-weight: 480;
