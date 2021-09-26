@@ -14,7 +14,12 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
 	'base64'
 );
 
-function getCss(foreground: string, background: string) {
+function getCss(
+	foreground: string,
+	background: string,
+	badgeForeground: string,
+	badgeBackground: string
+) {
 	return `
 	@font-face {
 		font-family: 'Vera';
@@ -46,7 +51,6 @@ function getCss(foreground: string, background: string) {
 		margin: 0;
 		padding: 2.35rem;
 		font-family: Inter;
-		font-weight: 450;
 		color: ${foreground};
 		background: ${background};
 	}
@@ -56,7 +60,7 @@ function getCss(foreground: string, background: string) {
 		justify-content: space-between;
 		flex-grow: 1;
 		width: 100%;
-		height: 56%;
+		height: 58%;
 	}
 
 	.header .content {
@@ -82,12 +86,20 @@ function getCss(foreground: string, background: string) {
 
 	.name {
 		font-size: 0.85rem;
-		font-weight: 480;
+		font-weight: 520;
+	}
+
+	.name span {
+		display: inline-block;
+		padding: 0.225rem 0.45rem;
+		color: ${badgeForeground};
+		background: ${badgeBackground};
+		border-radius: 0.175rem;
 	}
 	
 	.title {
 		font-size: 1.2rem;
-		font-weight: 680;
+		font-weight: 720;
 		line-height: 1.48rem;
 	}
 
@@ -99,7 +111,7 @@ function getCss(foreground: string, background: string) {
 		padding: 0.7rem 2rem 0 0;
 		box-sizing: border-box;
 		font-size: 0.85rem;
-		font-weight: 480;
+		font-weight: 520;
 		line-height: 1.16rem;
 	}
 
@@ -112,20 +124,29 @@ function getCss(foreground: string, background: string) {
 }
 
 export function getHtml(meta: MetaData) {
-	const { name, logo, title, description, foreground, background } = meta;
+	const {
+		name,
+		logo,
+		title,
+		description,
+		foreground,
+		background,
+		badgeForeground,
+		badgeBackground,
+	} = meta;
 	return `<!DOCTYPE html>
 <html>
 	<meta charset="utf-8">
 	<title>Generated Image</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		${getCss(foreground, background)}
+		${getCss(foreground, background, badgeForeground, badgeBackground)}
 	</style>
 	<body>
 		<div class="header">
 			<div class="content">
 				<div class="name">
-					${sanitizeHtml(name)}
+					<span>${sanitizeHtml(name)}</span>
 				</div>
 				<div class="title">
 					${packageTitle(sanitizeHtml(title))}

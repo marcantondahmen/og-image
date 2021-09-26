@@ -14,6 +14,8 @@ export async function getMetaData(project: string, page: string) {
 			description: '',
 			foreground: '',
 			background: '',
+			badgeForeground: '',
+			badgeBackground: '',
 		};
 
 		return meta;
@@ -54,6 +56,8 @@ export async function getMetaData(project: string, page: string) {
 		description: descriptionShort,
 		foreground: data.foreground,
 		background: data.background,
+		badgeForeground: data.badgeForeground,
+		badgeBackground: data.badgeBackground,
 	};
 
 	return meta;

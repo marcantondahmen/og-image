@@ -13,4 +13,6 @@ export interface MetaData {
 	description: string;
 	foreground: string;
 	background: string;
+	badgeForeground: string;
+	badgeBackground: string;
 }

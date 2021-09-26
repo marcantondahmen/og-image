@@ -32,6 +32,8 @@ export const projectCollection: { [key: string]: any } = {
 		baseUrl: 'https://automad.org',
 		foreground: '#242424',
 		background: '#ffffff',
+		badgeForeground: '#ffffff',
+		badgeBackground: '#242424',
 	},
 	automadPackages: <ProjectSettings>{
 		name: 'Automad Packages',
@@ -64,6 +66,8 @@ export const projectCollection: { [key: string]: any } = {
 		baseUrl: 'https://packages.automad.org',
 		foreground: '#242424',
 		background: '#ffffff',
+		badgeForeground: '#242424',
+		badgeBackground: '#efefef',
 	},
 	revitron: <ProjectSettings>{
 		name: 'Revitron',
@@ -88,8 +92,10 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://revitron.readthedocs.io/en/latest',
-		foreground: '#f2f2f2',
-		background: '#141414',
+		foreground: '#EFF0F1',
+		background: '#222326',
+		badgeForeground: '#EFF0F1',
+		badgeBackground: '#292B2E',
 	},
 	revitronUi: <ProjectSettings>{
 		name: 'Revitron UI',
@@ -119,11 +125,13 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://revitron-ui.readthedocs.io/en/latest',
-		foreground: '#242424',
+		foreground: '#35383B',
 		background: '#ffffff',
+		badgeForeground: '#ffffff',
+		badgeBackground: '#35383B',
 	},
 	airmad: <ProjectSettings>{
-		name: 'Automad — Airmad',
+		name: 'Automad ⁄ Airmad',
 		logo: `
 			<svg 
 			xmlns="http://www.w3.org/2000/svg" 
@@ -141,7 +149,9 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://airmad.readthedocs.io/en/latest',
-		foreground: '#242424',
+		foreground: '#35383B',
 		background: '#ffffff',
+		badgeForeground: '#35383B',
+		badgeBackground: '#f9f776',
 	},
 };
