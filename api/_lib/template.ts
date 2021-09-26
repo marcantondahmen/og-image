@@ -33,7 +33,7 @@ function getCss(foreground: string, background: string) {
 	}
 
 	html {
-		font-size: 76px;
+		font-size: 68px;
 		margin: 0;
 		padding: 0;
 	}
@@ -44,22 +44,11 @@ function getCss(foreground: string, background: string) {
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 1.75rem;
+		padding: 2.35rem;
 		font-family: Inter;
 		font-weight: 450;
 		color: ${foreground};
 		background: ${background};
-	}
-
-	code {
-		color: #D400FF;
-		font-family: 'Vera';
-		white-space: pre-wrap;
-		letter-spacing: -5px;
-	}
-
-	code:before, code:after {
-		content: '\`';
 	}
 
 	.header {
@@ -74,20 +63,20 @@ function getCss(foreground: string, background: string) {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 64%;
+		width: 68%;
 		padding-right: 1.25rem;
 	}
 
 	.header .logo {
-		width: 36%;
+		width: 32%;
 		text-align: right;
 	}
 
 	.header svg {
 		width: auto;
-		height: 70%;
+		height: 65%;
 		max-width: 100%;
-		max-height: 70%;
+		max-height: 65%;
 		fill: currentColor;
 	}
 
@@ -98,7 +87,7 @@ function getCss(foreground: string, background: string) {
 	
 	.title {
 		font-size: 1.2rem;
-		font-weight: 720;
+		font-weight: 680;
 		line-height: 1.48rem;
 	}
 
@@ -107,17 +96,11 @@ function getCss(foreground: string, background: string) {
 	}
 
 	.description {
-		padding: 0.7rem 0 0 0;
+		padding: 0.7rem 2rem 0 0;
 		box-sizing: border-box;
 		font-size: 0.85rem;
 		font-weight: 480;
-		line-height: 1.05rem;
-	}
-
-	.plus {
-		color: #BBB;
-		font-family: Times New Roman, Verdana;
-		font-size: 100px;
+		line-height: 1.16rem;
 	}
 
 	.emoji {

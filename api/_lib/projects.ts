@@ -30,8 +30,8 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://automad.org',
-		foreground: '#ffffff',
-		background: '#1f2022',
+		foreground: '#242424',
+		background: '#ffffff',
 	},
 	automadPackages: <ProjectSettings>{
 		name: 'Automad Packages',
@@ -62,7 +62,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://packages.automad.org',
-		foreground: '#181818',
+		foreground: '#242424',
 		background: '#ffffff',
 	},
 	revitron: <ProjectSettings>{
@@ -88,8 +88,8 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://revitron.readthedocs.io/en/latest',
-		foreground: '#eff0f1',
-		background: '#222326',
+		foreground: '#f2f2f2',
+		background: '#141414',
 	},
 	revitronUi: <ProjectSettings>{
 		name: 'Revitron UI',
@@ -119,7 +119,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://revitron-ui.readthedocs.io/en/latest',
-		foreground: '#35383b',
+		foreground: '#242424',
 		background: '#ffffff',
 	},
 	airmad: <ProjectSettings>{
@@ -141,7 +141,7 @@ export const projectCollection: { [key: string]: any } = {
 			</svg>
 		`,
 		baseUrl: 'https://airmad.readthedocs.io/en/latest',
-		foreground: '#35383b',
+		foreground: '#242424',
 		background: '#ffffff',
 	},
 };
