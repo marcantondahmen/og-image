@@ -105,7 +105,7 @@ function getCss(
 	}
 
 	.title .vendor {
-		font-weight: 450;
+		font-weight: 520;
 	}
 
 	.description {

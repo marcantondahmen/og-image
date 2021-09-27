@@ -71,7 +71,7 @@ export const projectCollection: { [key: string]: any } = {
 		foreground: '#242424',
 		background: '#ffffff',
 		badgeForeground: '#242424',
-		badgeBackground: '#efefef',
+		badgeBackground: '#ededed',
 		badgeRadius: '0.2rem',
 	},
 	revitron: <ProjectSettings>{
@@ -100,7 +100,7 @@ export const projectCollection: { [key: string]: any } = {
 		foreground: '#EFF0F1',
 		background: '#222326',
 		badgeForeground: '#EFF0F1',
-		badgeBackground: '#292B2E',
+		badgeBackground: '#3E4246',
 		badgeRadius: '0',
 	},
 	revitronUi: <ProjectSettings>{
