@@ -18,7 +18,8 @@ function getCss(
 	foreground: string,
 	background: string,
 	badgeForeground: string,
-	badgeBackground: string
+	badgeBackground: string,
+	badgeRadius: string
 ) {
 	return `
 	@font-face {
@@ -91,10 +92,10 @@ function getCss(
 
 	.name span {
 		display: inline-block;
-		padding: 0.225rem 0.45rem;
+		padding: 0.25rem 0.45rem;
 		color: ${badgeForeground};
 		background: ${badgeBackground};
-		border-radius: 0.175rem;
+		border-radius: ${badgeRadius};
 	}
 	
 	.title {
@@ -133,6 +134,7 @@ export function getHtml(meta: MetaData) {
 		background,
 		badgeForeground,
 		badgeBackground,
+		badgeRadius,
 	} = meta;
 	return `<!DOCTYPE html>
 <html>
@@ -140,7 +142,7 @@ export function getHtml(meta: MetaData) {
 	<title>Generated Image</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		${getCss(foreground, background, badgeForeground, badgeBackground)}
+		${getCss(foreground, background, badgeForeground, badgeBackground, badgeRadius)}
 	</style>
 	<body>
 		<div class="header">

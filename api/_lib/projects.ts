@@ -4,6 +4,9 @@ interface ProjectSettings {
 	baseUrl: string;
 	foreground: string;
 	background: string;
+	badgeForeground: string;
+	badgeBackground: string;
+	badgeRadius: string;
 }
 
 export const projectCollection: { [key: string]: any } = {
@@ -34,6 +37,7 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#ffffff',
 		badgeForeground: '#ffffff',
 		badgeBackground: '#242424',
+		badgeRadius: '0.2rem',
 	},
 	automadPackages: <ProjectSettings>{
 		name: 'Automad Packages',
@@ -68,6 +72,7 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#ffffff',
 		badgeForeground: '#242424',
 		badgeBackground: '#efefef',
+		badgeRadius: '0.2rem',
 	},
 	revitron: <ProjectSettings>{
 		name: 'Revitron',
@@ -96,6 +101,7 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#222326',
 		badgeForeground: '#EFF0F1',
 		badgeBackground: '#292B2E',
+		badgeRadius: '0',
 	},
 	revitronUi: <ProjectSettings>{
 		name: 'Revitron UI',
@@ -129,6 +135,7 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#ffffff',
 		badgeForeground: '#ffffff',
 		badgeBackground: '#35383B',
+		badgeRadius: '0',
 	},
 	airmad: <ProjectSettings>{
 		name: 'Automad ⁄ Airmad',
@@ -153,5 +160,6 @@ export const projectCollection: { [key: string]: any } = {
 		background: '#ffffff',
 		badgeForeground: '#35383B',
 		badgeBackground: '#f9f776',
+		badgeRadius: '0',
 	},
 };

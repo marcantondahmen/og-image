@@ -15,4 +15,5 @@ export interface MetaData {
 	background: string;
 	badgeForeground: string;
 	badgeBackground: string;
+	badgeRadius: string;
 }

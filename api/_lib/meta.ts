@@ -16,6 +16,7 @@ export async function getMetaData(project: string, page: string) {
 			background: '',
 			badgeForeground: '',
 			badgeBackground: '',
+			badgeRadius: '',
 		};
 
 		return meta;
@@ -58,6 +59,7 @@ export async function getMetaData(project: string, page: string) {
 		background: data.background,
 		badgeForeground: data.badgeForeground,
 		badgeBackground: data.badgeBackground,
+		badgeRadius: data.badgeRadius,
 	};
 
 	return meta;
