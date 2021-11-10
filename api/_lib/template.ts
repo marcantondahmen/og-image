@@ -68,20 +68,20 @@ function getCss(
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 68%;
+		width: 65%;
 		padding-right: 1.25rem;
 	}
 
 	.header .logo {
-		width: 32%;
+		width: 35%;
 		text-align: right;
 	}
 
 	.header svg {
 		width: auto;
-		height: 65%;
+		height: 70%;
 		max-width: 100%;
-		max-height: 65%;
+		max-height: 70%;
 		fill: currentColor;
 	}
 

@@ -70,8 +70,8 @@ export const projectCollection: { [key: string]: any } = {
 		baseUrl: 'https://packages.automad.org',
 		foreground: '#242424',
 		background: '#ffffff',
-		badgeForeground: '#242424',
-		badgeBackground: '#ededed',
+		badgeForeground: '#ffffff',
+		badgeBackground: '#242424',
 		badgeRadius: '0.2rem',
 	},
 	revitron: <ProjectSettings>{
