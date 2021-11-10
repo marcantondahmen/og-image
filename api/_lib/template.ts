@@ -39,7 +39,7 @@ function getCss(
 	}
 
 	html {
-		font-size: 37px;
+		font-size: 76px;
 		margin: 0;
 		padding: 0;
 	}
@@ -50,7 +50,7 @@ function getCss(
 		flex-direction: column;
 		height: 100vh;
 		margin: 0;
-		padding: 2rem;
+		padding: 1.75rem;
 		font-family: Inter;
 		color: ${foreground};
 		background: ${background};
