@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import { projectCollection } from './projects';
 import { MetaData } from './types';
